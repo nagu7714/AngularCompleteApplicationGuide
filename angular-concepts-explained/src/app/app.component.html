@@ -1,0 +1,27 @@
+<div *ngIf="isUserloggedIn;else logout">
+Select Country : <select (change)="choice($event.target.value)">
+    <option>Select Country</option>
+    <option *ngFor="let c of countries" [value] ="c.code">{{c.name}}</option>
+</select>
+
+<div [ngSwitch]="selectedCountry">
+<div *ngSwitchCase="'ind'" class="jumbotron">
+<h1> Country code +91 </h1>  
+</div>
+<div *ngSwitchCase="'usa'" class="jumbotron">
+    <h1> Country code +01 </h1>  
+    </div>
+    <div *ngSwitchCase="'eng'" class="jumbotron">
+        <h1> Country code +44 </h1>  
+        </div>
+        <div *ngSwitchDefault="'eng'" class="jumbotron">
+            <h1> Select the country </h1>  
+            </div>
+
+</div>
+
+<!--<app-structural-directive></app-structural-directive>-->
+</div>
+<ng-template #logout>
+    <p>You are not logged in....</p>
+</ng-template>
