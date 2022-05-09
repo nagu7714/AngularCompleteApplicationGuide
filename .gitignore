@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs
+/angular-concepts-explained/.vscode
+/angular-concepts-explained/package-lock.json
